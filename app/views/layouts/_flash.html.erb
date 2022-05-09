@@ -1,0 +1,6 @@
+<% flash.each do |key, value| %>
+  <p class="alert alert-<%= key %>">
+    <i class="fa-solid fa-circle-check"></i>
+    <%= value %>
+  </p>
+<% end %>

@@ -1,0 +1,305 @@
+$font-color: #333;
+$font-gray: #969799;
+$gray: lightgray;
+$font-xl: 22px;
+$font-l: 18px;
+$font-m: 16px;
+$font-s: 14px;
+$font-xs: 12px;
+$header-height: 56px;
+$link-default: #1a0dab;
+$max-width: 600px;
+$shadow: 3px 3px 6px 0 rgba(25, 25, 25, .2);
+$sp-inner-width: 400px;
+
+@mixin padding {
+  padding: 15px;
+}
+
+@mixin padding-side {
+  padding: 0;
+}
+
+body {
+  color: $font-color;
+  font-family: sans-serif;
+  font-size: $font-m;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $font-color; 
+  letter-spacing: .3px;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: .8;
+}
+
+p {
+  letter-spacing: .3px;
+  line-height: 1.5;
+  /*overflow-wrap: break-word;*/
+  word-break: break-word;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Font Awesome 6 */
+.fa-circle-check {
+  color: #79c753;
+}
+
+.error-li {
+  font-size: $font-s;
+  color: #c8102e;
+}
+
+/* header */
+header {
+  background-color: #fff;
+  border: 1px solid $gray;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  display: inline-block;
+  font-size: $font-xl;
+  @include padding;
+}
+
+/* main */
+.main {
+  min-height: calc(100vh - 90px);
+  padding-top: $header-height;
+  padding-bottom: 40px;
+}
+
+.container {
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+  /*@include padding-side;*/
+  padding: 0 15px;
+}
+
+.container-inner {
+  margin-top: 2.25rem;
+  @include padding-side;
+}
+
+.heading {
+  @include padding-side;
+  font-size: $font-xl;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 3;
+}
+
+/*.alert {
+  padding: 1rem .5rem;
+  font-size: $font-s;
+}*/
+
+.alert-notice {
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto -2.25rem;
+  @include padding;
+  font-size: $font-s;
+}
+
+/*
+.post-opener {
+  background-color: skyblue;
+  border-radius: 20px;
+  box-shadow: $shadow;
+  display: block;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  width: 40px;
+  z-index: 10;
+}
+*/
+
+/* root_path(posts) */
+.sort-txt {
+  display: block;
+  /*line-height: 3;*/
+  padding: 28px 0 0 0;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.post-box {
+  border-top: 1px solid $gray;
+}
+
+.post-li {
+  /*@include padding;*/
+  padding: 15px 0;
+  border-bottom: 1px solid $gray;
+}
+
+.post-title, .comment-title {
+  font-size: $font-l;
+  font-weight: bold;
+  margin-bottom: .25rem;
+}
+
+.post-title-link:hover {
+  color: $link-default;
+}
+
+#post_title, #post_content, .btn-post, #comment_content {
+  width: 100%;
+  padding: .5em;
+  font-size: $font-m;
+}
+
+.btn-post {
+  width: 100%;
+  border: none;
+  letter-spacing: 2px;
+  background-color: skyblue;
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+}
+
+input[name="post[title]"], textarea[name="post[content]"], textarea[name="content"], textarea[name="comment[content]"] {
+  border: 1px solid $gray;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.sort-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* post/:id/show */
+.post-show {
+  margin-bottom: 1rem;
+}
+
+.post-title {
+  margin: .5em 0;
+  font-size: $font-l;
+  font-weight: bold;
+}
+
+#content {
+  max-width: $max-width;
+  width: 100%;
+  height: 70px;
+  padding: .5em;
+  font-size: $font-m;
+  
+}
+
+.comment-box {
+  border-top: 1px solid $gray;
+}
+
+.post-content-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5em;
+}
+
+.comment-time, .comment-num {
+  font-size: $font-s;
+  color: $font-gray;
+}
+
+.comment-num:hover {
+  text-decoration: underline;
+}
+
+/* contact */
+.contact-link {
+  color: $link-default;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* footer */
+footer {
+  border: 1px solid $gray;
+  font-size: $font-s;
+}
+
+.footer-ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width;
+}
+
+.footer-link {
+  display: inline-block;
+  padding: 15px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  opacity: .8;
+}
+
+/* page */
+.page-title {
+  font-size: $font-xl;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 3;
+}
+
+.page-subttl {
+  font-size: $font-l;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 3;
+}
+
+.page-p {
+  line-height: 1.5;
+}
+
+.page-ul {
+  margin: $font-m 0;
+}
+  
+.page-li {
+  list-style-type: disc;
+  margin-left: 1rem;
+  line-height: 1.5;
+}
+
+
+@media all and (min-width: 501px) {
+  #content {
+    height: $header-height;
+  }
+
+  .main {
+    min-height: calc(100vh - 46px);
+  }
+
+  .footer-ul {
+    justify-content: center;
+  }
+}

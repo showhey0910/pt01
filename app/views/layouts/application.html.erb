@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prototype</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/712e7c59e4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <%= render "layouts/header" %>
+    <main class="main">
+      <%= render "layouts/flash" %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+    <%= render "layouts/footer" %>
+  </body>
+</html>

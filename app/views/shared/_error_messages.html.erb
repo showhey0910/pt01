@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+  <div id="error-explanation">
+    <ul>
+    <% object.errors.each do |error| %>
+      <li class="error-li"><i class="fa-solid fa-circle-exclamation"></i><%= error.full_message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
